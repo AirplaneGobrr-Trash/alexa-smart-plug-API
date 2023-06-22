@@ -1,0 +1,16 @@
+{
+  "name": "@airplanegobrr/alexa-smart-plug-API",
+  "version": "1.0.0",
+  "description": "A quick API for turning on and off alexa smart plugs, you can also get the status!",
+  "main": "smartplug.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": ["amazon smart plug API", "alexa smart plug", "smartplug", "alexa", "amazon"],
+  "authors": ["AirplaneGobrr <github@airplanegobrr.xyz>", "MeemeeLab"],
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.4.0"
+  },
+  "files": ["smartplug.js"]
+}
