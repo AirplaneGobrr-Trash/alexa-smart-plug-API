@@ -51,7 +51,7 @@ class SmartPlug {
             networkDetail: parseJSONStrings(response.data.networkDetail)
         }
         // console.log("start", jsonResponse, "end")
-        fs.writeFileSync("out.json", JSON.stringify(jsonResponse))
+        // fs.writeFileSync("out.json", JSON.stringify(jsonResponse))
         return jsonResponse
     }
 
