@@ -69,7 +69,7 @@ class SmartPlug {
     async getAllDevices() {
         const networkDetails = await this.getDevicesAPI()
 
-        const devices = networkDetails.filter(device => device.providerData.deviceType === 'SMARTPLUG')
+        const devices = networkDetails.filter(device => device.providerData.deviceType === 'SMARTPLUG' || device.providerData.deviceType === 'LIGHT')
             .map(device => ({
                 id: device.id,
                 name: device.displayName,
