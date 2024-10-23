@@ -68,15 +68,17 @@ class SmartPlug {
         return jsonResponse
     }
 
-    async getAllDevices() {
+    async getAllDevices(ignoreType = false) {
         const networkDetails = await this.getDevicesAPI()
 
-        const devices = networkDetails.filter(device => device.providerData.deviceType === 'SMARTPLUG')
-            .map(device => ({
-                id: device.id,
-                name: device.displayName,
-                description: device.description,
-                availability: device.availability
+        let rawDevices = networkDetails
+        if (!ignoreType) rawDevices = rawDevices.filter(device => device.providerData.deviceType === 'SMARTPLUG' || device.providerData.deviceType === 'LIGHT')
+
+        const devices = rawDevices.map(device => ({
+                id: device?.id,
+                name: device?.displayName,
+                description: device?.description,
+                availability: device?.availability
             }));
 
         return devices;
